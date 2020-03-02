@@ -25,7 +25,7 @@ $ ./build.sh
 Building ...
 ```
 
-Create an `bin` folder with 'compile' for standard entry point for build process:
+Create an `bin` folder with `compile` for standard entrypoint of build process:
 
 ```bash
 $ mkdir ./bin
@@ -44,5 +44,31 @@ $ git push heroku +HEAD:master
 The output of the build proccess:
 
 ```txt
-
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 364 bytes | 364.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Self Buildpack app detected
+remote:        Calling 'compile' task
+remote: Building ...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> (none)
+remote:
+remote: -----> Compressing...
+remote:        Done: 245B
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://fast-earth-75240.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/fast-earth-75240.git
+ * [new branch]      HEAD -> master
 ```
+
+**That's It**
+...
