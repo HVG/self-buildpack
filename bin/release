@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+### Configure directories
+BUILD_DIR=${1:-}
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+
+source $BP_DIR/lib/utils
+
+if [ ! -d "$BUILD_DIR/bin" ]; then
+  error "'bin' directory not found !!"
+fi
+
+if [ -s $BUILD_DIR/bin/release ]; then
+  eval "$BUILD_DIR/bin/release $BUILD_DIR"
+else
+  echo "--- {}"
+fi

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# https://github.com/ddollar/heroku-buildpack-apt
+function topic() {
+  echo $* | indent 's/^/ -----\> /'
+}
+
+function info() {
+  echo $* | indent 's/^/      > /'
+}
+function error() {
+  echo " !     $*" >&2
+  exit 1
+}
+
+function indent() {
+  c=${1-'s/^/       /'}
+  case $(uname) in
+    Darwin) sed -l "$c";;
+    *)      sed -u "$c";;
+  esac
+}
+# -----------------------------------------------
